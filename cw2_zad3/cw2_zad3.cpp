@@ -214,16 +214,16 @@ void addition()
 
 void multiplication()
 {
-	uint16_t left_width, common_dimension, right_height;
+	uint16_t left_height, common_dimension, right_width;
 	std::cout << "Podaj rozmiar macierzy\n";
-	std::cout << "Szerokosc lewej: ";
-	std::cin >> left_width;
-	std::cout << "Wysokosc lewej/szerokosc prawej: ";
+	std::cout << "Wysokosc lewej: ";
+	std::cin >> left_height;
+	std::cout << "Szerokosc lewej/wysokosc prawej: ";
 	std::cin >> common_dimension;
-	std::cout << "Wysokosc prawej: ";
-	std::cin >> right_height;
-	const Matrix* matrix_left = new Matrix(left_width, common_dimension, true);
-	const Matrix* matrix_right = new Matrix(common_dimension, right_height, true);
+	std::cout << "Szerokosc prawej: ";
+	std::cin >> right_width;
+	const Matrix* matrix_left = new Matrix(common_dimension, left_height, true);
+	const Matrix* matrix_right = new Matrix(right_width, common_dimension, true);
 	const Matrix* martix_product = new Matrix(*matrix_left * *matrix_right);
 	Matrix::printMultiplication(*matrix_left, *matrix_right, *martix_product);
 }
